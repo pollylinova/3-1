@@ -9,7 +9,7 @@ struct list {
 }
 *start = NULL; 
 
-void add_�(int n) { 
+void add_ĺ(int n) { 
 	list *p = start, * q = p;
 	q = new list;		  
 	q->key = n;	 
@@ -55,20 +55,23 @@ void help()
 					r = q->next;
 					q->next=q->next->next;
 					delete r;
-					t = p;
+					/*pl трябва да се премести извън while q->next, за да се задейства,
+                    ако си стигнала края на списъка и поне веднъж си изтривала, може да сложиш флаг
+                   			t = p;
 					if (start == p) {
 						start = start->next;
 					}
 					p = p->next;
 					delete t;
+                    */
 				}
-				q = q->next;
+               			else //pl трябва да се задейства, ако няма повече последователни повторения
+                    			q = q->next;
 			}
 
 		}
 	}
 }
-
 
 
 
@@ -96,7 +99,7 @@ int main()
 			{
 				cout << " ";
 				cin >> num;
-				add_�(num);
+				add_ĺ(num);
 			}
 			break;
 
